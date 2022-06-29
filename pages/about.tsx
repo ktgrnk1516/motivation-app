@@ -1,17 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Index Page</title>
+        <title>About Page</title>
       </Head>
       <main>
-        <h1>ここはトップページです</h1>
+        <h1>ここは概要ページです</h1>
       </main>
     </div>
   );
 };
 
-export default Home;
+export default About;
