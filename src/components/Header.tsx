@@ -1,4 +1,4 @@
-import styles from "./Header.module.scss";
+import styles from "./header.module.scss";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -64,7 +64,7 @@ const Header = () => {
           </div>
           <li onClick={() => menuFunction()}>
             <Link href={`${menu[0].url}`}>
-              <a >
+              <a>
                 <p className={styles.mainTitle}>{menu[0].title}</p>
                 <p className={styles.subTitle}>{menu[0].desc}</p>
               </a>
