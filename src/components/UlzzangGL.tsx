@@ -13,6 +13,7 @@ const UlzzangGL: React.FC = () => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   // const [dataC, setDataC] = useState([]);
+  
 
   //3分割する関数
   //https://pisuke-code.com/js-ways-to-split-string-and-array/
