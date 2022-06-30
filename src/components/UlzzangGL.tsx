@@ -12,8 +12,7 @@ import data from "../../public/UlzzangGL.json";
 const UlzzangGL: React.FC = () => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
-  // const [dataC, setDataC] = useState([]);
-  
+  const [dataC, setDataC] = useState([]);
 
   //3分割する関数
   //https://pisuke-code.com/js-ways-to-split-string-and-array/
@@ -25,12 +24,11 @@ const UlzzangGL: React.FC = () => {
     }
     setDataA(arrList[0]);
     setDataB(arrList[1]);
-    // setDataC(arrList[2]);
-    // return arrList;
+    setDataC(arrList[2]);
   };
 
   useEffect(() => {
-    const san = data.length / 2;
+    const san = data.length / 3;
     divideArrIntoPieces(data, san);
     // setLoonA(arry[0])
     // console.log(typeof arry[0]);
@@ -39,7 +37,7 @@ const UlzzangGL: React.FC = () => {
 
   return (
     <div className="flex">
-      <div className="w-1/2 ">
+      <div className="w-1/3 ">
         {dataA.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -53,7 +51,7 @@ const UlzzangGL: React.FC = () => {
           />
         ))}
       </div>
-      <div className="w-1/2 ">
+      <div className="w-1/3 ">
         {dataB.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -67,7 +65,7 @@ const UlzzangGL: React.FC = () => {
           />
         ))}
       </div>
-      {/* <div className="w-1/2 ">
+      <div className="w-1/3 ">
         {dataC.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -80,7 +78,7 @@ const UlzzangGL: React.FC = () => {
             objectFit="cover"
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
