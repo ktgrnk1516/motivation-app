@@ -17,9 +17,11 @@ const Header = () => {
     <React.Fragment>
       <header id="header" className={styles.header}>
         <div className="font-mono text-xs">
-          <Link href="/">
-            <a className={styles.logo}>Motivation</a>
-          </Link>
+          {/* <Link href="/"> */}
+          <a href="/" className={styles.logo}>
+            Motivation
+          </a>
+          {/* </Link> */}
         </div>
         <nav>
           <ul>
