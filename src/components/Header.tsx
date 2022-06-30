@@ -1,6 +1,12 @@
-import styles from "./header.module.scss";
+import styles from "./Header.module.scss";
 import Link from "next/link";
 import React, { useState } from "react";
+
+const menu = [
+  { title: "ulzzang girls", url: "UlzzangGL", desc: "美しい女性" },
+  { title: "", url: "" },
+  { title: "", url: "" },
+];
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -12,14 +18,14 @@ const Header = () => {
       <header id="header" className={styles.header}>
         <div className="font-mono text-xs">
           <Link href="/">
-            <a className={styles.logo}>Diet Motivation</a>
+            <a className={styles.logo}>Motivation</a>
           </Link>
         </div>
         <nav>
           <ul>
             <li>
-              <Link href="/">
-                <a>メニュー</a>
+              <Link href={`${menu[0].url}`}>
+                <a>{menu[0].title}</a>
               </Link>
             </li>
             <li>
@@ -37,7 +43,6 @@ const Header = () => {
                 <a>メニュー</a>
               </Link>
             </li>
-           
           </ul>
         </nav>
         <div className={styles.container}>
@@ -57,11 +62,11 @@ const Header = () => {
             <span></span>
             <p>Close</p>
           </div>
-          <li>
-            <Link href="/">
-              <a>
-                <p className={styles.mainTitle}>メニュー</p>
-                <p className={styles.subTitle}>私のメニュー</p>
+          <li onClick={() => menuFunction()}>
+            <Link href={`${menu[0].url}`}>
+              <a >
+                <p className={styles.mainTitle}>{menu[0].title}</p>
+                <p className={styles.subTitle}>{menu[0].desc}</p>
               </a>
             </Link>
           </li>

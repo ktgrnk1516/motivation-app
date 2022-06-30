@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import PostCard from "../src/components/PostCard";
+import ChillVibes from "../src/components/ChillVibes";
 
 const Home: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <title>Index Page</title>
       </Head>
       <main  >
-        <PostCard />
+        <ChillVibes />
       </main>
     </div>
   );
