@@ -16,29 +16,25 @@ const PostCard: React.FC = () => {
 
   //3分割する関数
   //https://pisuke-code.com/js-ways-to-split-string-and-array/
-  function divideArrIntoPieces(arr: any, n: any) {
-    const arrList = [];
-    const idx = 0;
+  const divideArrIntoPieces = (arr: any, n: number) => {
+    let arrList = [];
+    let idx = 0;
     while (idx < arr.length) {
       arrList.push(arr.slice(idx, idx + n));
     }
-    setA(arrList[0]);
-    setB(arrList[1]);
-    setC(arrList[2]);
-
-    // return arrList;
-  }
+    return arrList;
+  };
 
   useEffect(() => {
-    divideArrIntoPieces(loon, loon.length / 3);
-    // console.log(arrList);
+    // const arry = divideArrIntoPieces(loon, loon.length / 3);
+    // setA(arry[0]);
+    // console.log(arry);
   }, []);
 
   return (
     <div className="flex">
       <div className="w-1/3 ">
-        {/* <main className=""> */}
-        {a.map((l: any, i) => (
+        {loon.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
@@ -51,8 +47,7 @@ const PostCard: React.FC = () => {
         ))}
       </div>
       <div className="w-1/3 ">
-        {/* <main className=""> */}
-        {b.map((l: any, i) => (
+        {loon.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
@@ -65,8 +60,7 @@ const PostCard: React.FC = () => {
         ))}
       </div>
       <div className="w-1/3 ">
-        {/* <main className=""> */}
-        {c.map((l: any, i) => (
+        {loon.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
