@@ -4,17 +4,16 @@ import UlzzangGL from "../src/components/UlzzangGL";
 import { useRouter } from "next/router";
 
 const OtherPage: NextPage = () => {
-
   //routerのid
   const router = useRouter();
-  const { id } = router.query;
+  // const { id } = router.query;
 
   return (
     <div>
       <Head>
         <title>Index Page</title>
       </Head>
-      <main  >
+      <main>
         <UlzzangGL />
       </main>
     </div>
