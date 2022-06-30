@@ -1,9 +1,10 @@
 .header {
+  background: red;
   display: flex;
   align-items: center;
   width: 100%;
   height: auto;
-  padding: 0 40px;
+  padding: 40px;
   z-index: 50;
   position: fixed;
   .logo {
@@ -39,12 +40,13 @@
 .humburger {
   background-color: rgb(34, 35, 36);
   color: white;
-  padding: 10px 5px 0 5px;
+  padding: 10px 10px 10px 10px;
   display: none;
   cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 40px;
+
+  // position: fixed;
+  // top: 50px;
+  // right: 40px;
   span {
     background-color: white;
     width: 30px;

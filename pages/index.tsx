@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import PostCard from "../src/components/PostCard";
 
 const Home: NextPage = () => {
   return (
@@ -7,8 +8,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Index Page</title>
       </Head>
-      <main>
-        <h1>ここはトップページです</h1>
+      <main  >
+        <PostCard />
       </main>
     </div>
   );

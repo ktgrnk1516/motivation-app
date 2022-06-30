@@ -3,8 +3,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const Header = () => {
-
-
   const [openMenu, setOpenMenu] = useState(false);
   const menuFunction = () => {
     setOpenMenu(!openMenu);
@@ -12,9 +10,9 @@ const Header = () => {
   return (
     <React.Fragment>
       <header id="header" className={styles.header}>
-        <div className={styles.logo}>
+        <div>
           <Link href="/">
-            <a className={styles.logo}>🌗</a>
+            <a className={styles.logo}>Diet Motivation</a>
           </Link>
         </div>
         <nav>
@@ -53,9 +51,9 @@ const Header = () => {
         </nav>
         <div className={styles.container}>
           <div className={styles.humburger} onClick={() => menuFunction()}>
-            <span className={openMenu ? styles.open : undefined}></span>
-            <span className={openMenu ? styles.open : undefined}></span>
-            <p className={openMenu ? styles.open : undefined}>Menu</p>
+            {/* <span className={openMenu ? styles.open : undefined}></span>
+            <span className={openMenu ? styles.open : undefined}></span> */}
+            <p className={openMenu ? styles.open : undefined}>≡</p>
           </div>
         </div>
       </header>
