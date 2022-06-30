@@ -10,9 +10,9 @@ import Image from "next/image";
 import loon from "../../public/loon.json";
 
 const PostCard: React.FC = () => {
-  const [a, setA] = useState([]);
-  const [b, setB] = useState([]);
-  const [c, setC] = useState([]);
+  const [loonA, setLoonA] = useState([]);
+  const [loonB, setLoonB] = useState([]);
+  const [loonC, setLoonC] = useState([]);
 
   //3分割する関数
   //https://pisuke-code.com/js-ways-to-split-string-and-array/
@@ -20,21 +20,26 @@ const PostCard: React.FC = () => {
     let arrList = [];
     let idx = 0;
     while (idx < arr.length) {
-      arrList.push(arr.slice(idx, idx + n));
+      arrList.push(arr.splice(idx, idx + n));
     }
-    return arrList;
+    setLoonA(arrList[0]);
+    setLoonB(arrList[1]);
+    setLoonC(arrList[2]);
+    // return arrList;
   };
 
   useEffect(() => {
-    // const arry = divideArrIntoPieces(loon, loon.length / 3);
-    // setA(arry[0]);
-    // console.log(arry);
+    const san = loon.length / 3;
+    divideArrIntoPieces(loon, san);
+    // setLoonA(arry[0])
+    // console.log(typeof arry[0]);
+    // console.log(typeof loon);
   }, []);
 
   return (
     <div className="flex">
       <div className="w-1/3 ">
-        {loon.map((l: any, i) => (
+        {loonA.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
@@ -47,7 +52,7 @@ const PostCard: React.FC = () => {
         ))}
       </div>
       <div className="w-1/3 ">
-        {loon.map((l: any, i) => (
+        {loonB.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
@@ -60,7 +65,7 @@ const PostCard: React.FC = () => {
         ))}
       </div>
       <div className="w-1/3 ">
-        {loon.map((l: any, i) => (
+        {loonC.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
