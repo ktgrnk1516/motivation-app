@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <header id="header" className={styles.header}>
-        <div>
+        <div className="font-mono text-xs">
           <Link href="/">
             <a className={styles.logo}>Diet Motivation</a>
           </Link>
@@ -37,16 +37,7 @@ const Header = () => {
                 <a>メニュー</a>
               </Link>
             </li>
-            <li>
-              <Link href="/">
-                <a>メニュー</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a>メニュー</a>
-              </Link>
-            </li>
+           
           </ul>
         </nav>
         <div className={styles.container}>
