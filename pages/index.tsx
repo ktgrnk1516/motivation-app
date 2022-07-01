@@ -8,7 +8,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Index Page</title>
       </Head>
-      <main  >
+      <main>
         <ChillVibes />
       </main>
     </div>
