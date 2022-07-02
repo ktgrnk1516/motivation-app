@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <header id="header" className={styles.header}>
-        <div className="font-mono text-xs">
+        <div className="font-mono text-xs ">
           <Link href="/">
             <a className={styles.logo}>
               {id !== undefined ? id : "Work Hard See Result!!"}

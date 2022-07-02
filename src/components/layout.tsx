@@ -5,7 +5,7 @@ import Header from "./Header";
 const Layout = ({ children }: Props) => {
   return (
     <div>
-      <nav>
+      <nav >
         <Header />
         {/* <nav className="flex flex-rows p-2  bg-red-500 text-white font-bold">
         <Link href="/">

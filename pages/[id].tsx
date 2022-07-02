@@ -5,6 +5,8 @@ import UlzzangBY from "../src/components/UlzzangBY";
 import MuscleBY from "../src/components/MuscleBY";
 import ChillVibes from "../src/components/ChillVibes";
 import { useRouter } from "next/router";
+import Meigen from "../public/Meigen.json";
+
 
 const OtherPage = () => {
   //routerのid

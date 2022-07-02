@@ -15,11 +15,10 @@ const Home: NextPage = () => {
       <main className="main">
         <ChillVibes />
       </main>
-      <div className=" flex flex-col items-center justify-around font-fancy tracking-widest text-sm  card">
+      <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest text-sm  card">
         {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
         <div className="meigen">{meigen[10].meigen}</div>
         <div className="text-center  auth">-{meigen[10].auth}-</div>
-      
       </div>
     </div>
   );
