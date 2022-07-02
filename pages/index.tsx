@@ -37,10 +37,10 @@ const Home: NextPage = () => {
       <main className="main">
         <ChillVibes />
       </main>
-      <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest text-sm  card">
+      <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
         {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
-        <div className="meigen">{meigen[random].meigen}</div>
-        <div className="text-center  auth">-{meigen[random].auth}-</div>
+        <div className="text-sm meigen">{meigen[random].meigen}</div>
+        <div className="text-xs text-center  auth">-{meigen[random].auth}-</div>
       </div>
     </div>
   );
