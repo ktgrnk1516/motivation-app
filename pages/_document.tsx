@@ -5,6 +5,10 @@ const MyDocument = () => {
     <Html lang="ja-JP">
       <Head>
         <meta name="Motivation App" content="MyApp" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <body>
         <Main />

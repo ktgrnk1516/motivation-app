@@ -14,3 +14,49 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.main {
+  position: relative;
+  z-index: -1;
+}
+
+.card {
+  position: absolute;
+  left: 25%;
+  top: 20%;
+  width: 50%;
+  height: 35%;
+  background: rgba(128, 128, 128, 0.287);
+  /* padding: 1rem; */
+  z-index: 99;
+  color: aliceblue;
+
+  display: flex;
+}
+
+.meigen {
+  /* background: #000; */
+  /* width: 80%;
+  height: 80%; */
+  /* position: absolute;
+  left: 15%;
+  top: 15%; */
+  width: 70%;
+  /* height: 20%; */
+
+  color: aliceblue;
+  z-index: 100;
+}
+.auth {
+  /* background: red; */
+  /* width: 80%;
+  height: 80%; */
+  /* position: absolute;
+  left: 15%;
+  top: 60%; */
+  width: 70%;
+  /* height: 15%; */
+
+  color: aliceblue;
+  z-index: 100;
+}
