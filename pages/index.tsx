@@ -2,28 +2,32 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import ChillVibes from "../src/components/ChillVibes";
 import Meigen from "../public/Meigen.json";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const Home: NextPage = () => {
   const meigen: any = Meigen.map((_) => _);
-  console.log(meigen[0]);
+  // console.log(meigen[0]);
 
+  const [random, setRandom] = useState<number>(0);
 
-    //乱数の整数
-    const getRandom = useCallback(() => {
-      if (Meigen.length === 0) {
-        return;
-      } else {
-        //Meigenのlength
-        const len = Meigen.length;
-        //ランダムな数値を作る
-        // const min = 0;
-        // const max = len;
-        return Math.floor(Math.random() * len);
-      }
-    }, [Meigen.length]);
-  
-    const random = getRandom();
+  //乱数の整数
+  const getRandom = useCallback(() => {
+    if (Meigen.length === 0) {
+      return;
+    } else {
+      //Meigenのlength
+      const len = Meigen.length;
+      //ランダムな数値を作る
+      // const min = 0;
+      // const max = len;
+      return Math.floor(Math.random() * len);
+    }
+  }, [Meigen.length]);
+
+  useEffect(() => {
+    const randoms: any = getRandom();
+    setRandom(randoms);
+  }, []);
 
   return (
     <div>
