@@ -38,7 +38,7 @@ const UlzzangGL: React.FC = () => {
     }
     setDataA(arrayShuffle(arrList[0]));
     setDataB(arrayShuffle(arrList[1]));
-    setDataC(arrayShuffle(arrList[2]));
+    // setDataC(arrayShuffle(arrList[2]));
   };
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const UlzzangGL: React.FC = () => {
 
   return (
     <div className="flex">
-      <div className="w-1/3 ">
+      <div className="w-1/2 ">
         {dataA.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -65,7 +65,7 @@ const UlzzangGL: React.FC = () => {
           />
         ))}
       </div>
-      <div className="w-1/3 ">
+      <div className="w-1/2 ">
         {dataB.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -79,7 +79,7 @@ const UlzzangGL: React.FC = () => {
           />
         ))}
       </div>
-      <div className="w-1/3 ">
+      {/* <div className="w-1/3 ">
         {dataC.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -92,7 +92,7 @@ const UlzzangGL: React.FC = () => {
             objectFit="cover"
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
