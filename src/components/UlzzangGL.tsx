@@ -14,6 +14,20 @@ const UlzzangGL: React.FC = () => {
   const [dataB, setDataB] = useState([]);
   const [dataC, setDataC] = useState([]);
 
+  //配列をシャッフルする関数
+  const arrayShuffle = (array: any) => {
+    for (let i = array.length - 1; 0 < i; i--) {
+      // 0〜(i+1)の範囲で値を取得
+      let r = Math.floor(Math.random() * (i + 1));
+
+      // 要素の並び替えを実行
+      let tmp = array[i];
+      array[i] = array[r];
+      array[r] = tmp;
+    }
+    return array;
+  };
+
   //3分割する関数
   //https://pisuke-code.com/js-ways-to-split-string-and-array/
   const divideArrIntoPieces = (arr: any, n: number) => {
@@ -22,9 +36,9 @@ const UlzzangGL: React.FC = () => {
     while (idx < arr.length) {
       arrList.push(arr.splice(idx, idx + n));
     }
-    setDataA(arrList[0]);
-    setDataB(arrList[1]);
-    setDataC(arrList[2]);
+    setDataA(arrayShuffle(arrList[0]));
+    setDataB(arrayShuffle(arrList[1]));
+    setDataC(arrayShuffle(arrList[2]));
   };
 
   useEffect(() => {

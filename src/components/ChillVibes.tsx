@@ -14,6 +14,20 @@ const ChillVibes: React.FC = () => {
   const [loonB, setLoonB] = useState([]);
   const [loonC, setLoonC] = useState([]);
 
+  //配列をシャッフルする関数
+  const arrayShuffle = (array: any) => {
+    for (let i = array.length - 1; 0 < i; i--) {
+      // 0〜(i+1)の範囲で値を取得
+      let r = Math.floor(Math.random() * (i + 1));
+
+      // 要素の並び替えを実行
+      let tmp = array[i];
+      array[i] = array[r];
+      array[r] = tmp;
+    }
+    return array;
+  };
+
   //3分割する関数
   //https://pisuke-code.com/js-ways-to-split-string-and-array/
   const divideArrIntoPieces = (arr: any, n: number) => {
@@ -22,12 +36,13 @@ const ChillVibes: React.FC = () => {
     while (idx < arr.length) {
       arrList.push(arr.splice(idx, idx + n));
     }
-    setLoonA(arrList[0]);
-    setLoonB(arrList[1]);
-    setLoonC(arrList[2]);
+    setLoonA(arrayShuffle(arrList[0]));
+    setLoonB(arrayShuffle(arrList[1]));
+    setLoonC(arrayShuffle(arrList[2]));
     // return arrList;
   };
 
+  //3分割する関数実行
   useEffect(() => {
     const san = loon.length / 3;
     divideArrIntoPieces(loon, san);

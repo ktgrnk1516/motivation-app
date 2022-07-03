@@ -23,7 +23,11 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <header id="header" className={styles.header}>
+      <header
+        id="header"
+        className={styles.header}
+        style={{ position: "fixed" }} //headerを固定
+      >
         <div className="font-mono text-xs ">
           <Link href="/">
             <a className={styles.logo}>
