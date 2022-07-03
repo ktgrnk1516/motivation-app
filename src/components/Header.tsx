@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 
 const menu = [
-  { title: "Life", url: "Life", desc: "（日々のモチベーション）" },
-  { title: "Beauty", url: "Beauty", desc: "（美しくなるモチベーション）" },
-  { title: "Training ", url: "Training", desc: "（アスリートの言葉）" },
+  // { title: "Home", url: "", desc: "" },
+  { title: "Beauty", url: "Beauty", desc: "（美しくなる✨）" },
+  { title: "Cool", url: "Cool", desc: "（かっこよくなる✨）" },
+  { title: "Life", url: "Life", desc: "（理想の日々を送る✨）" },
 ];
 
 const Header = () => {
@@ -30,12 +31,18 @@ const Header = () => {
         <div className="font-mono text-xs ">
           <Link href="/">
             <a className={styles.logo}>
-              {id !== undefined ? id : "Motivation😎"}
+              {"Motivation 😎"}
+              {/* {id !== undefined ? id : "Motivation 😎"} */}
             </a>
           </Link>
         </div>
         <nav>
           <ul>
+            <li>
+              <Link href="/">
+                <a>{"Home"}</a>
+              </Link>
+            </li>
             <li>
               <Link href={`${menu[0].url}`}>
                 <a>{menu[0].title}</a>
@@ -70,6 +77,7 @@ const Header = () => {
             <span></span>
             <p>Close</p>
           </div>
+
           <li onClick={() => menuFunction()}>
             <Link href={`${menu[0].url}`}>
               <a>
@@ -100,6 +108,14 @@ const Header = () => {
                   {menu[2].desc}
                 </p>
                 {/* <p className={styles.subTitle}>{menu[2].desc}</p> */}
+              </a>
+            </Link>
+          </li>
+          <li onClick={() => menuFunction()}>
+            <Link href="/">
+              <a>
+                <p className={styles.subTitle}>{"Homeへ戻る"}</p>
+                {/* <p className={styles.subTitle}>{menu[0].desc}</p> */}
               </a>
             </Link>
           </li>

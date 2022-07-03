@@ -42,8 +42,8 @@ const UlzzangGL: React.FC = () => {
   };
 
   useEffect(() => {
-    const san = data.length / 2;
-    divideArrIntoPieces(data, san);
+    // const san = data.length / 2;
+    divideArrIntoPieces(data, data.length / 2);
     // setLoonA(arry[0])
     // console.log(typeof arry[0]);
     // console.log(typeof loon);
@@ -51,7 +51,7 @@ const UlzzangGL: React.FC = () => {
 
   return (
     <div className="flex">
-      <div className="w-1/2 ">
+      <div className="w-1/2  ">
         {dataA.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -65,7 +65,7 @@ const UlzzangGL: React.FC = () => {
           />
         ))}
       </div>
-      <div className="w-1/2 ">
+      <div className="w-1/2  ">
         {dataB.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -79,7 +79,7 @@ const UlzzangGL: React.FC = () => {
           />
         ))}
       </div>
-      {/* <div className="w-1/3 ">
+      {/* <div className="sm:w-1/3 ">
         {dataC.map((l: any, i) => (
           <Image
             src={l.img_url}

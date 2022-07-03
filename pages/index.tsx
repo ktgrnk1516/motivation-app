@@ -35,14 +35,14 @@ const Home: NextPage = () => {
         <title>Index Page</title>
       </Head>
       <main className="main">
-        {/* <Life /> */}
+        <Life />
       </main>
-      {/* <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
-        <div className="text-sm meigen">{meigen1[random].meigen}</div>
+      <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
+        <div className="text-sm sm:text-center text-start meigen">{meigen1[random].meigen}</div>
         <div className="text-xs text-center  auth">
           -{meigen1[random].auth}-
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -44,8 +44,8 @@ const ChillVibes: React.FC = () => {
 
   //3分割する関数実行
   useEffect(() => {
-    const san = data.length / 2;
-    divideArrIntoPieces(data, san);
+    // const san = data.length / 2;
+    divideArrIntoPieces(data, data.length / 2);
     // setDataA(arry[0])
     // console.log(typeof arry[0]);
     // console.log(typeof data);

@@ -42,8 +42,8 @@ const MuscleBY: React.FC = () => {
   };
 
   useEffect(() => {
-    const san = data.length / 2;
-    divideArrIntoPieces(data, san);
+    // const san = data.length / 2;
+    divideArrIntoPieces(data, data.length / 2);
     // setLoonA(arry[0])
     // console.log(typeof arry[0]);
     // console.log(typeof loon);

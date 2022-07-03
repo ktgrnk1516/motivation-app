@@ -1,7 +1,7 @@
 // import type { NextPage } from "next";
 import Head from "next/head";
 import Beauty from "../src/components/Beauty";
-import Training from "../src/components/Training";
+import Cool from "../src/components/Cool";
 import Life from "../src/components/Life";
 import { useRouter } from "next/router";
 import Meigen1 from "../public/Meigen1.json";
@@ -66,14 +66,14 @@ const OtherPage = () => {
         </div>
       </div>
     );
-  } else if (id === "Training") {
+  } else if (id === "Cool") {
     return (
       <div>
         <Head>
           <title>Index Page</title>
         </Head>
         <main className="main">
-          <Training />
+          <Cool />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
           {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
