@@ -42,7 +42,7 @@ const UlzzangGL: React.FC = () => {
   };
 
   useEffect(() => {
-    const san = data.length / 3;
+    const san = data.length / 2;
     divideArrIntoPieces(data, san);
     // setLoonA(arry[0])
     // console.log(typeof arry[0]);
