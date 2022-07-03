@@ -7,12 +7,12 @@ import Image from "next/image";
 //next/imageのlayout='responsive'とdisplay: flex;を併用するときの注意点
 //https://zenn.dev/co9xs/scraps/ffbd732b65d9b9
 
-import data from "../../public/UlzzangGL.json";
+import data from "../../public/Training.json";
 
-const UlzzangGL: React.FC = () => {
+const MuscleBY: React.FC = () => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
-  const [dataC, setDataC] = useState([]);
+  // const [dataC, setDataC] = useState([]);
 
   //配列をシャッフルする関数
   const arrayShuffle = (array: any) => {
@@ -97,4 +97,4 @@ const UlzzangGL: React.FC = () => {
   );
 };
 
-export default UlzzangGL;
+export default MuscleBY;

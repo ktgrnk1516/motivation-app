@@ -7,9 +7,9 @@ import Image from "next/image";
 //next/imageのlayout='responsive'とdisplay: flex;を併用するときの注意点
 //https://zenn.dev/co9xs/scraps/ffbd732b65d9b9
 
-import data from "../../public/UlzzangGL.json";
+import data from "../../public/Life.json";
 
-const MuscleBY: React.FC = () => {
+const ChillVibes: React.FC = () => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   const [dataC, setDataC] = useState([]);
@@ -39,14 +39,16 @@ const MuscleBY: React.FC = () => {
     setDataA(arrayShuffle(arrList[0]));
     setDataB(arrayShuffle(arrList[1]));
     setDataC(arrayShuffle(arrList[2]));
+    // return arrList;
   };
 
+  //3分割する関数実行
   useEffect(() => {
     const san = data.length / 3;
     divideArrIntoPieces(data, san);
-    // setLoonA(arry[0])
+    // setDataA(arry[0])
     // console.log(typeof arry[0]);
-    // console.log(typeof loon);
+    // console.log(typeof data);
   }, []);
 
   return (
@@ -58,8 +60,8 @@ const MuscleBY: React.FC = () => {
             className=""
             key={i}
             alt="data img"
-            width={800}
-            height={800}
+            width={400}
+            height={400}
             layout="responsive"
             objectFit="cover"
           />
@@ -72,8 +74,8 @@ const MuscleBY: React.FC = () => {
             className=""
             key={i}
             alt="data img"
-            width={800}
-            height={800}
+            width={400}
+            height={400}
             layout="responsive"
             objectFit="cover"
           />
@@ -86,8 +88,8 @@ const MuscleBY: React.FC = () => {
             className=""
             key={i}
             alt="data img"
-            width={800}
-            height={800}
+            width={400}
+            height={400}
             layout="responsive"
             objectFit="cover"
           />
@@ -97,4 +99,4 @@ const MuscleBY: React.FC = () => {
   );
 };
 
-export default MuscleBY;
+export default ChillVibes;

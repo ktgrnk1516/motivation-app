@@ -7,12 +7,12 @@ import Image from "next/image";
 //next/imageのlayout='responsive'とdisplay: flex;を併用するときの注意点
 //https://zenn.dev/co9xs/scraps/ffbd732b65d9b9
 
-import loon from "../../public/loon.json";
+import data from "../../public/Beauty.json";
 
-const ChillVibes: React.FC = () => {
-  const [loonA, setLoonA] = useState([]);
-  const [loonB, setLoonB] = useState([]);
-  const [loonC, setLoonC] = useState([]);
+const UlzzangGL: React.FC = () => {
+  const [dataA, setDataA] = useState([]);
+  const [dataB, setDataB] = useState([]);
+  const [dataC, setDataC] = useState([]);
 
   //配列をシャッフルする関数
   const arrayShuffle = (array: any) => {
@@ -36,16 +36,14 @@ const ChillVibes: React.FC = () => {
     while (idx < arr.length) {
       arrList.push(arr.splice(idx, idx + n));
     }
-    setLoonA(arrayShuffle(arrList[0]));
-    setLoonB(arrayShuffle(arrList[1]));
-    setLoonC(arrayShuffle(arrList[2]));
-    // return arrList;
+    setDataA(arrayShuffle(arrList[0]));
+    setDataB(arrayShuffle(arrList[1]));
+    // setDataC(arrayShuffle(arrList[2]));
   };
 
-  //3分割する関数実行
   useEffect(() => {
-    const san = loon.length / 3;
-    divideArrIntoPieces(loon, san);
+    const san = data.length / 3;
+    divideArrIntoPieces(data, san);
     // setLoonA(arry[0])
     // console.log(typeof arry[0]);
     // console.log(typeof loon);
@@ -53,50 +51,50 @@ const ChillVibes: React.FC = () => {
 
   return (
     <div className="flex">
-      <div className="w-1/3 ">
-        {loonA.map((l: any, i) => (
+      <div className="w-1/2 ">
+        {dataA.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
             key={i}
-            alt="loon img"
-            width={400}
-            height={400}
+            alt="data img"
+            width={800}
+            height={800}
             layout="responsive"
             objectFit="cover"
           />
         ))}
       </div>
-      <div className="w-1/3 ">
-        {loonB.map((l: any, i) => (
+      <div className="w-1/2 ">
+        {dataB.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
             key={i}
-            alt="loon img"
-            width={400}
-            height={400}
+            alt="data img"
+            width={800}
+            height={800}
             layout="responsive"
             objectFit="cover"
           />
         ))}
       </div>
-      <div className="w-1/3 ">
-        {loonC.map((l: any, i) => (
+      {/* <div className="w-1/3 ">
+        {dataC.map((l: any, i) => (
           <Image
             src={l.img_url}
             className=""
             key={i}
-            alt="loon img"
-            width={400}
-            height={400}
+            alt="data img"
+            width={800}
+            height={800}
             layout="responsive"
             objectFit="cover"
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default ChillVibes;
+export default UlzzangGL;

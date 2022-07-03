@@ -4,10 +4,9 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 
 const menu = [
-  { title: "ulzzang girls", url: "UlzzangGL", desc: "（美しい女性）" },
-  { title: "ulzzang boys", url: "UlzzangBY", desc: "（かっこいい男性）" },
-  { title: "muscle boys", url: "MuscleBY", desc: "（マッチョマン）" },
-  { title: "chill vibes...😌", url: "ChillVibes", desc: "（優雅な時間）" },
+  { title: "Life", url: "Life", desc: "（日々のモチベーション）" },
+  { title: "Beauty", url: "Beauty", desc: "（美しくなるモチベーション）" },
+  { title: "Training ", url: "Training", desc: "（アスリートの言葉）" },
 ];
 
 const Header = () => {
@@ -31,7 +30,7 @@ const Header = () => {
         <div className="font-mono text-xs ">
           <Link href="/">
             <a className={styles.logo}>
-              {id !== undefined ? id : "Work Hard See Result!!"}
+              {id !== undefined ? id : "Motivation😎"}
             </a>
           </Link>
         </div>
@@ -101,17 +100,6 @@ const Header = () => {
                   {menu[2].desc}
                 </p>
                 {/* <p className={styles.subTitle}>{menu[2].desc}</p> */}
-              </a>
-            </Link>
-          </li>
-          <li onClick={() => menuFunction()}>
-            <Link href={`${menu[3].url}`}>
-              <a>
-                <p className={styles.subTitle}>
-                  {menu[3].title}
-                  {menu[3].desc}
-                </p>
-                {/* <p className={styles.subTitle}>{menu[3].desc}</p> */}
               </a>
             </Link>
           </li>
