@@ -37,7 +37,7 @@ const Home: NextPage = ({ life }: any) => {
   return (
     <div>
       <Head>
-        <title>Motivation 😎</title>
+        <title>Motivation ✨</title>
       </Head>
       <main className="main">
         {/* 広告 */}

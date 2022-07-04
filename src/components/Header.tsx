@@ -34,8 +34,8 @@ const Header = () => {
         <div className="font-mono text-xs ">
           <Link href="/">
             <a className={styles.logo}>
-              {"Motivation 😎"}
-              {/* {id !== undefined ? id : "Motivation 😎"} */}
+              {"Motivation ✨"}
+              {/* {id !== undefined ? id : "Motivation ✨"} */}
             </a>
           </Link>
         </div>
