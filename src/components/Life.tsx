@@ -18,7 +18,7 @@ interface Props {
 const ChillVibes: React.FC<Props> = ({data}:any) => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
-  // const [dataC, setDataC] = useState([]);
+  const [dataC, setDataC] = useState([]);
 
   //配列をシャッフルする関数
   const arrayShuffle = (array: any) => {
@@ -44,14 +44,14 @@ const ChillVibes: React.FC<Props> = ({data}:any) => {
     }
     setDataA(arrayShuffle(arrList[0]));
     setDataB(arrayShuffle(arrList[1]));
-    // setDataC(arrayShuffle(arrList[2]));
+    setDataC(arrayShuffle(arrList[2]));
     // return arrList;
   };
 
   //3分割する関数実行
   useEffect(() => {
     // const san = data.length / 2;
-    divideArrIntoPieces(data, data.length / 2);
+    divideArrIntoPieces(data, data.length / 3);
     // setDataA(arry[0])
     // console.log(typeof arry[0]);
     // console.log(typeof data);
@@ -59,7 +59,7 @@ const ChillVibes: React.FC<Props> = ({data}:any) => {
 
   return (
     <div className="flex">
-      <div className="w-1/2 ">
+      <div className="w-1/3 ">
         {dataA.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -73,7 +73,7 @@ const ChillVibes: React.FC<Props> = ({data}:any) => {
           />
         ))}
       </div>
-      <div className="w-1/2 ">
+      <div className="w-1/3 ">
         {dataB.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -87,7 +87,7 @@ const ChillVibes: React.FC<Props> = ({data}:any) => {
           />
         ))}
       </div>
-      {/* <div className="w-1/3 ">
+      <div className="w-1/3 ">
         {dataC.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -100,7 +100,7 @@ const ChillVibes: React.FC<Props> = ({data}:any) => {
             objectFit="cover"
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

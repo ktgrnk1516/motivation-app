@@ -44,12 +44,12 @@ const UlzzangGL: React.FC<Props> = ({data}:any) => {
     }
     setDataA(arrayShuffle(arrList[0]));
     setDataB(arrayShuffle(arrList[1]));
-    // setDataC(arrayShuffle(arrList[2]));
+    setDataC(arrayShuffle(arrList[2]));
   };
 
   useEffect(() => {
     // const san = data.length / 2;
-    divideArrIntoPieces(data, data.length / 2);
+    divideArrIntoPieces(data, data.length / 3);
     // setLoonA(arry[0])
     // console.log(typeof arry[0]);
     // console.log(typeof loon);
@@ -57,7 +57,7 @@ const UlzzangGL: React.FC<Props> = ({data}:any) => {
 
   return (
     <div className="flex">
-      <div className="w-1/2  ">
+      <div className="w-1/3  ">
         {dataA.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -71,7 +71,7 @@ const UlzzangGL: React.FC<Props> = ({data}:any) => {
           />
         ))}
       </div>
-      <div className="w-1/2  ">
+      <div className="w-1/3  ">
         {dataB.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -85,7 +85,7 @@ const UlzzangGL: React.FC<Props> = ({data}:any) => {
           />
         ))}
       </div>
-      {/* <div className="sm:w-1/3 ">
+      <div className="sm:w-1/3 ">
         {dataC.map((l: any, i) => (
           <Image
             src={l.img_url}
@@ -98,7 +98,7 @@ const UlzzangGL: React.FC<Props> = ({data}:any) => {
             objectFit="cover"
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
