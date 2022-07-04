@@ -4,7 +4,7 @@ import Life from "../src/components/Life";
 import Meigen1 from "../public/Meigen1.json";
 import { useCallback, useEffect, useState } from "react";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ data }) => {
   const meigen1: any = Meigen1.map((_) => _);
   // console.log(meigen[0]);
 
@@ -35,10 +35,12 @@ const Home: NextPage = () => {
         <title>Index Page</title>
       </Head>
       <main className="main">
-        <Life />
+        <Life data={data} />
       </main>
       <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
-        <div className="text-sm sm:text-center text-start meigen">{meigen1[random].meigen}</div>
+        <div className="text-sm sm:text-center text-start meigen">
+          {meigen1[random].meigen}
+        </div>
         <div className="text-xs text-center  auth">
           -{meigen1[random].auth}-
         </div>
@@ -48,3 +50,11 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+//URLによってjsonを取得し分ける
+export async function getStaticProps() {
+  const req = await fetch(`http://localhost:3000/Life.json`);
+  const data = await req.json();
+
+  return { props: { data } };
+}

@@ -7,9 +7,9 @@ import Image from "next/image";
 //next/imageのlayout='responsive'とdisplay: flex;を併用するときの注意点
 //https://zenn.dev/co9xs/scraps/ffbd732b65d9b9
 
-import data from "../../public/Life.json";
+// import data from "../../public/Life.json";
 
-const ChillVibes: React.FC = () => {
+const ChillVibes: React.FC = ({data}) => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   // const [dataC, setDataC] = useState([]);

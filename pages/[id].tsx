@@ -9,7 +9,9 @@ import Meigen2 from "../public/Meigen2.json";
 import Meigen3 from "../public/Meigen3.json";
 import { useCallback, useEffect, useState } from "react";
 
-const OtherPage = () => {
+const OtherPage = ({ data }) => {
+  // console.log(data);
+
   //routerのid
   const router = useRouter();
   const { id } = router.query;
@@ -55,7 +57,7 @@ const OtherPage = () => {
           <title>Index Page</title>
         </Head>
         <main className="main">
-          <Beauty />
+          <Beauty data={data} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
           {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
@@ -73,7 +75,7 @@ const OtherPage = () => {
           <title>Index Page</title>
         </Head>
         <main className="main">
-          <Cool />
+          <Cool data={data} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
           {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
@@ -91,7 +93,7 @@ const OtherPage = () => {
           <title>Index Page</title>
         </Head>
         <main className="main">
-          <Life />
+          <Life data={data} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
           {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
@@ -106,3 +108,29 @@ const OtherPage = () => {
 };
 
 export default OtherPage;
+
+//URLによってjsonを取得し分ける
+export async function getStaticProps({ params }) {
+  const req = await fetch(`http://localhost:3000/${params.id}.json`);
+  const data = await req.json();
+
+  return { props: { data } };
+}
+
+export async function getStaticPaths() {
+  const req = await fetch(`http://localhost:3000/paths.json`);
+  const data = await req.json();
+
+  const paths = data.map((_: any) => {
+    return {
+      params: {
+        id: _,
+      },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
