@@ -8,12 +8,15 @@ import Meigen1 from "../public/Meigen1.json";
 import Meigen2 from "../public/Meigen2.json";
 import Meigen3 from "../public/Meigen3.json";
 import { useCallback, useEffect, useState } from "react";
-// import { GetStaticProps } from "next";
-// import { ParsedUrlQuery } from "node:querystring";
-// import { loadPosts } from "../lib/fetch-posts";
-// import { loadPostsPaths } from "../lib/fetch-posts";
+import { GetStaticProps } from "next";
+import { ParsedUrlQuery } from "node:querystring";
 
-const OtherPage = () => {
+import beauty from "../public/Beauty.json";
+import cool from "../public/Cool.json";
+import life from "../public/Life.json";
+import path from "../public/paths.json";
+
+const OtherPage = ({ params, beauty, life, cool }: any) => {
   // console.log(data);
 
   //routerのid
@@ -61,7 +64,7 @@ const OtherPage = () => {
           <title>【{id}】Motivation 😎</title>
         </Head>
         <main className="main">
-          <Beauty />
+          <Beauty data={beauty} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
           {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
@@ -79,7 +82,7 @@ const OtherPage = () => {
           <title>【{id}】Motivation 😎</title>
         </Head>
         <main className="main">
-          <Cool />
+          <Cool data={cool} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
           {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
@@ -97,7 +100,7 @@ const OtherPage = () => {
           <title>【{id}】Motivation 😎 </title>
         </Head>
         <main className="main">
-          <Life />
+          <Life data={life} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
           {/* <div className="flex  items-center meigen">{meigen[10].meigen}</div> */}
@@ -113,44 +116,34 @@ const OtherPage = () => {
 
 export default OtherPage;
 
-// 1. Paramsの型を定義し、ParsedUrlQueryをextendsする
-// interface Params extends ParsedUrlQuery {
-//   data: any;
-// }
+
 
 //URLによってjsonを取得し分ける
-// export const getStaticProps: GetStaticProps<Params> = async ({
-//   params,
-// }: any) => {
-//   const data = await loadPosts({ params });
 
-//   return { props: { data } };
-// };
+export const getStaticProps: GetStaticProps = async ({
+  params,
+}: any) => {
+  // const req = await fetch(`http://localhost:3000/${params.id}.json`);
 
-// // export const getStaticProps: GetStaticProps<Params> = async ({
-// //   params,
-// // }: any) => {
-// //   const req = await fetch(`http://localhost:3000/${params.id}.json`);
-// //   const data = await req.json();
+  // const data = await req.json();
 
-// //   return { props: { data } };
-// // };
+  return { props: { params, beauty, life, cool } };
+};
 
-// export async function getStaticPaths() {
-//   // const req = await fetch(`http://localhost:3000/paths.json`);
-//   // const data = await req.json();
-//   const data = await loadPostsPaths();
+export async function getStaticPaths() {
+  // const req = await fetch(`http://localhost:3000/paths.json`);
+  // const data = await req.json();
 
-//   const paths = data.map((_: any) => {
-//     return {
-//       params: {
-//         id: _,
-//       },
-//     };
-//   });
+  const paths = path.map((_: any) => {
+    return {
+      params: {
+        id: _,
+      },
+    };
+  });
 
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// }
+  return {
+    paths,
+    fallback: false,
+  };
+}
