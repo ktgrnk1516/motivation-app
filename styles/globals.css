@@ -26,7 +26,8 @@ a {
   top: 30%;
   width: 60%;
   height: 35%;
-  background: rgba(110, 110, 110, 0.479);
+  background: rgba(92, 92, 92, 0.781);
+  border-radius: 0.5rem;
 
   z-index: 99;
   color: aliceblue;
