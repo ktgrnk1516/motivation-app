@@ -9,7 +9,7 @@ import Meigen2 from "../public/Meigen2.json";
 import Meigen3 from "../public/Meigen3.json";
 import { useCallback, useEffect, useState } from "react";
 
-const OtherPage = ({ data }) => {
+const OtherPage = ({ data }:any) => {
   // console.log(data);
 
   //routerのid
