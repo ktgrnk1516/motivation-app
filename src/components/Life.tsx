@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 //Next.js next/image で外部URLの画像を使いたいときにやること
 //https://chaika.hatenablog.com/entry/2021/07/20/083000
@@ -9,7 +10,7 @@ import Image from "next/image";
 
 // import data from "../../public/Life.json";
 
-const ChillVibes: React.FC = ({data}) => {
+const ChillVibes: React.FC = ({ data }) => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   // const [dataC, setDataC] = useState([]);

@@ -54,7 +54,7 @@ const OtherPage = ({ data }) => {
     return (
       <div>
         <Head>
-          <title>Index Page</title>
+          <title>【{id}】Motivation 😎</title>
         </Head>
         <main className="main">
           <Beauty data={data} />
@@ -72,7 +72,7 @@ const OtherPage = ({ data }) => {
     return (
       <div>
         <Head>
-          <title>Index Page</title>
+          <title>【{id}】Motivation 😎</title>
         </Head>
         <main className="main">
           <Cool data={data} />
@@ -90,7 +90,7 @@ const OtherPage = ({ data }) => {
     return (
       <div>
         <Head>
-          <title>Index Page</title>
+          <title>【{id}】Motivation 😎 </title>
         </Head>
         <main className="main">
           <Life data={data} />

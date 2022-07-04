@@ -32,7 +32,7 @@ const Home: NextPage = ({ data }) => {
   return (
     <div>
       <Head>
-        <title>Index Page</title>
+        <title>Motivation 😎</title>
       </Head>
       <main className="main">
         <Life data={data} />
