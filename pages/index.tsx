@@ -4,6 +4,7 @@ import Life from "../src/components/Life";
 import Meigen1 from "../public/Meigen1.json";
 import { useCallback, useEffect, useState } from "react";
 import AdmaxSwitch from "../src/components/AdmaxSwitch";
+import { loadPostsIndex } from "../lib/fetch-posts";
 
 const Home: NextPage = ({ life }: any) => {
   const meigen1: any = Meigen1.map((_) => _);
@@ -60,8 +61,10 @@ export default Home;
 
 //URLによってjsonを取得し分ける
 export async function getStaticProps() {
-  const req = await fetch(`http://localhost:3000/LifeForIndex.json`);
-  const life = await req.json();
+  const life = await loadPostsIndex();
+
+  // const req = await fetch(`http://localhost:3000/LifeForIndex.json`);
+  // const life = await req.json();
 
   return { props: { life } };
 }

@@ -10,6 +10,7 @@ import Meigen3 from "../public/Meigen3.json";
 import { useCallback, useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "node:querystring";
+import { loadPosts } from "../lib/fetch-posts";
 
 const OtherPage = ({ data }: any) => {
   // console.log(data);
@@ -120,11 +121,19 @@ interface Params extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps<Params> = async ({
   params,
 }: any) => {
-  const req = await fetch(`http://localhost:3000/${params.id}.json`);
-  const data = await req.json();
+  const data = await loadPosts({params});
 
   return { props: { data } };
 };
+
+// export const getStaticProps: GetStaticProps<Params> = async ({
+//   params,
+// }: any) => {
+//   const req = await fetch(`http://localhost:3000/${params.id}.json`);
+//   const data = await req.json();
+
+//   return { props: { data } };
+// };
 
 export async function getStaticPaths() {
   const req = await fetch(`http://localhost:3000/paths.json`);
