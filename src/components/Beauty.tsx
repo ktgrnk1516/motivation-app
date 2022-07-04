@@ -85,7 +85,7 @@ const UlzzangGL: React.FC<Props> = ({data}:any) => {
           />
         ))}
       </div>
-      <div className="sm:w-1/3 ">
+      <div className="w-1/3 ">
         {dataC.map((l: any, i) => (
           <Image
             src={l.img_url}
