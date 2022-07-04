@@ -9,7 +9,7 @@ import Meigen2 from "../public/Meigen2.json";
 import Meigen3 from "../public/Meigen3.json";
 import { useCallback, useEffect, useState } from "react";
 import { GetStaticProps } from "next";
-import { ParsedUrlQuery } from "node:querystring";
+import AdmaxSwitch from "../src/components/AdmaxSwitch";
 
 import beauty from "../public/Beauty.json";
 import cool from "../public/Cool.json";
@@ -64,6 +64,11 @@ const OtherPage = ({ params, beauty, life, cool }: any) => {
           <title>【{id}】Motivation 😎</title>
         </Head>
         <main className="main">
+          {/* 広告 */}
+          <div className="flex justify-center mb-8  mr-3">
+            <AdmaxSwitch id="88b8ac30d0d3fc49ac5df081717693eb" />
+          </div>
+          {/* 広告 */}
           <Beauty data={beauty} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
@@ -82,6 +87,11 @@ const OtherPage = ({ params, beauty, life, cool }: any) => {
           <title>【{id}】Motivation 😎</title>
         </Head>
         <main className="main">
+          {/* 広告 */}
+          <div className="flex justify-center mb-8  mr-3">
+            <AdmaxSwitch id="88b8ac30d0d3fc49ac5df081717693eb" />
+          </div>
+          {/* 広告 */}
           <Cool data={cool} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
@@ -100,6 +110,11 @@ const OtherPage = ({ params, beauty, life, cool }: any) => {
           <title>【{id}】Motivation 😎 </title>
         </Head>
         <main className="main">
+          {/* 広告 */}
+          <div className="flex justify-center mb-8  mr-3">
+            <AdmaxSwitch id="88b8ac30d0d3fc49ac5df081717693eb" />
+          </div>
+          {/* 広告 */}
           <Life data={life} />
         </main>
         <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
@@ -116,13 +131,9 @@ const OtherPage = ({ params, beauty, life, cool }: any) => {
 
 export default OtherPage;
 
-
-
 //URLによってjsonを取得し分ける
 
-export const getStaticProps: GetStaticProps = async ({
-  params,
-}: any) => {
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   // const req = await fetch(`http://localhost:3000/${params.id}.json`);
 
   // const data = await req.json();
