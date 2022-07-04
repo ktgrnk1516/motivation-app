@@ -7,13 +7,11 @@ import Image from "next/image";
 //next/imageのlayout='responsive'とdisplay: flex;を併用するときの注意点
 //https://zenn.dev/co9xs/scraps/ffbd732b65d9b9
 
-// import data from "../../public/Cool.json";
+import data from "../../public/Cool.json";
 
-interface Props {
-  data: any;
-}
 
-const MuscleBY: React.FC<Props> = ({ data }: any) => {
+
+const MuscleBY: React.FC = () => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   // const [dataC, setDataC] = useState([]);
