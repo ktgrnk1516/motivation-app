@@ -5,7 +5,7 @@ import Meigen1 from "../public/Meigen1.json";
 import { useCallback, useEffect, useState } from "react";
 import AdmaxSwitch from "../src/components/AdmaxSwitch";
 
-const Home: NextPage = ({ data }) => {
+const Home: NextPage = ({data}:any) => {
   const meigen1: any = Meigen1.map((_) => _);
   // console.log(meigen[0]);
 
@@ -63,5 +63,5 @@ export async function getStaticProps() {
   const req = await fetch(`http://localhost:3000/Life.json`);
   const data = await req.json();
 
-  return { props: { data } };
+  return { props: {data} };
 }

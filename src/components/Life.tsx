@@ -10,7 +10,7 @@ import Link from "next/link";
 
 // import data from "../../public/Life.json";
 
-const ChillVibes: React.FC = ({ data }) => {
+const ChillVibes: React.FC = ({ data }:any) => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   // const [dataC, setDataC] = useState([]);

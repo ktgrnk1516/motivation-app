@@ -9,7 +9,7 @@ import Image from "next/image";
 
 // import data from "../../public/Beauty.json";
 
-const UlzzangGL: React.FC = ({data}) => {
+const UlzzangGL: React.FC = ({data}:any) => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   const [dataC, setDataC] = useState([]);
