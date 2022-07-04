@@ -2,6 +2,7 @@ import styles from "./header.module.scss";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Coffee from "./Coffee";
 
 const menu = [
   // { title: "Home", url: "", desc: "" },
@@ -120,6 +121,9 @@ const Header = () => {
             </Link>
           </li>
         </ul>
+        <div className="flex justify-center mt-20">
+          <Coffee />
+        </div>
       </div>
     </React.Fragment>
   );
