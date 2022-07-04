@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Coffee from "./Coffee";
 
+
+
 const menu = [
   // { title: "Home", url: "", desc: "" },
   { title: "Beauty", url: "Beauty", desc: "（美しくなる✨）" },

@@ -3,6 +3,7 @@ import Head from "next/head";
 import Life from "../src/components/Life";
 import Meigen1 from "../public/Meigen1.json";
 import { useCallback, useEffect, useState } from "react";
+import AdmaxSwitch from "../src/components/AdmaxSwitch";
 
 const Home: NextPage = ({ data }) => {
   const meigen1: any = Meigen1.map((_) => _);
@@ -35,6 +36,12 @@ const Home: NextPage = ({ data }) => {
         <title>Motivation 😎</title>
       </Head>
       <main className="main">
+        {/* 広告 */}
+        <div className="flex justify-center mb-8  mr-3">
+          <AdmaxSwitch id="88b8ac30d0d3fc49ac5df081717693eb" />
+        </div>
+        {/* 広告 */}
+
         <Life data={data} />
       </main>
       <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">

@@ -13,7 +13,7 @@ const AdmaxSwitch = (props) => {
     if (!admaxads.some((ad) => ad.admax_id === props.id))
       admaxads.push({
         admax_id: props.id,
-        type: "switch",
+        type: "overlay",
       });
     // 外部JSを読み込んで広告リストを実際に表示
     const tag = document.createElement("script");
