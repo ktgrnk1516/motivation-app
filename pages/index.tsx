@@ -5,7 +5,7 @@ import Meigen1 from "../public/Meigen1.json";
 import { useCallback, useEffect, useState } from "react";
 import AdmaxSwitch from "../src/components/AdmaxSwitch";
 
-const Home: NextPage = ({ data }: any) => {
+const Home: NextPage = ({ life }: any) => {
   const meigen1: any = Meigen1.map((_) => _);
   // console.log(meigen[0]);
 
@@ -42,7 +42,7 @@ const Home: NextPage = ({ data }: any) => {
         </div>
         {/* 広告 */}
 
-        <Life data={data} />
+        <Life data={life} />
       </main>
       <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
         <div className="text-sm sm:text-center text-start meigen">
@@ -60,8 +60,8 @@ export default Home;
 
 //URLによってjsonを取得し分ける
 export async function getStaticProps() {
-  const req = await fetch(`https://localhost:3000/LifeForIndex.json`);
-  const data = await req.json();
+  const req = await fetch(`http://localhost:3000/LifeForIndex.json`);
+  const life = await req.json();
 
-  return { props: { data } };
+  return { props: { life } };
 }

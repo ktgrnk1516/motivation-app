@@ -116,19 +116,18 @@ interface Params extends ParsedUrlQuery {
   data: any;
 }
 
-
 //URLによってjsonを取得し分ける
 export const getStaticProps: GetStaticProps<Params> = async ({
   params,
 }: any) => {
-  const req = await fetch(`https://localhost:3000/${params.id}.json`);
+  const req = await fetch(`http://localhost:3000/${params.id}.json`);
   const data = await req.json();
 
   return { props: { data } };
 };
 
 export async function getStaticPaths() {
-  const req = await fetch(`https://localhost:3000/paths.json`);
+  const req = await fetch(`http://localhost:3000/paths.json`);
   const data = await req.json();
 
   const paths = data.map((_: any) => {
