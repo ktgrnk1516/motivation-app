@@ -10,7 +10,12 @@ import Link from "next/link";
 
 // import data from "../../public/Life.json";
 
-const ChillVibes: React.FC = ({ data }:any) => {
+interface Props {
+  data: any
+  }
+
+
+const ChillVibes: React.FC<Props> = ({ data }:any) => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   // const [dataC, setDataC] = useState([]);

@@ -9,7 +9,11 @@ import Image from "next/image";
 
 // import data from "../../public/Cool.json";
 
-const MuscleBY: React.FC = ({data}:any) => {
+interface Props {
+  data: any;
+}
+
+const MuscleBY: React.FC<Props> = ({ data }: any) => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   // const [dataC, setDataC] = useState([]);

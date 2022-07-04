@@ -9,7 +9,13 @@ import Image from "next/image";
 
 // import data from "../../public/Beauty.json";
 
-const UlzzangGL: React.FC = ({data}:any) => {
+
+interface Props {
+  data: any
+  }
+
+
+const UlzzangGL: React.FC<Props> = ({data}:any) => {
   const [dataA, setDataA] = useState([]);
   const [dataB, setDataB] = useState([]);
   const [dataC, setDataC] = useState([]);
