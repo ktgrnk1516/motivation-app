@@ -60,7 +60,7 @@ export default Home;
 
 //URLによってjsonを取得し分ける
 export async function getStaticProps() {
-  const req = await fetch(`http://localhost:3000/LifeForIndex.json`);
+  const req = await fetch(`https://localhost:3000/LifeForIndex.json`);
   const data = await req.json();
 
   return { props: { data } };
