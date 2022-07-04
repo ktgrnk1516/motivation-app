@@ -11,6 +11,7 @@ import { useCallback, useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "node:querystring";
 import { loadPosts } from "../lib/fetch-posts";
+import { loadPostsPaths } from "../lib/fetch-posts";
 
 const OtherPage = ({ data }: any) => {
   // console.log(data);
@@ -121,7 +122,7 @@ interface Params extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps<Params> = async ({
   params,
 }: any) => {
-  const data = await loadPosts({params});
+  const data = await loadPosts({ params });
 
   return { props: { data } };
 };
@@ -136,8 +137,9 @@ export const getStaticProps: GetStaticProps<Params> = async ({
 // };
 
 export async function getStaticPaths() {
-  const req = await fetch(`http://localhost:3000/paths.json`);
-  const data = await req.json();
+  // const req = await fetch(`http://localhost:3000/paths.json`);
+  // const data = await req.json();
+  const data = await loadPostsPaths();
 
   const paths = data.map((_: any) => {
     return {
