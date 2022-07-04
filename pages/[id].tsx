@@ -8,8 +8,10 @@ import Meigen1 from "../public/Meigen1.json";
 import Meigen2 from "../public/Meigen2.json";
 import Meigen3 from "../public/Meigen3.json";
 import { useCallback, useEffect, useState } from "react";
+import { GetStaticProps } from "next";
+import { ParsedUrlQuery } from "node:querystring";
 
-const OtherPage = ({ data }:any) => {
+const OtherPage = ({ data }: any) => {
   // console.log(data);
 
   //routerのid
@@ -109,13 +111,18 @@ const OtherPage = ({ data }:any) => {
 
 export default OtherPage;
 
+// 1. Paramsの型を定義し、ParsedUrlQueryをextendsする
+interface Params extends ParsedUrlQuery {
+  data: any;
+}
+
 //URLによってjsonを取得し分ける
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps<Params> = async ({ params }:any) => {
   const req = await fetch(`http://localhost:3000/${params.id}.json`);
   const data = await req.json();
 
   return { props: { data } };
-}
+};
 
 export async function getStaticPaths() {
   const req = await fetch(`http://localhost:3000/paths.json`);
