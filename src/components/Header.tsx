@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Coffee from "./Coffee";
 
-
-
 const menu = [
   // { title: "Home", url: "", desc: "" },
   { title: "Beauty", url: "Beauty", desc: "（美しくなる✨）" },
@@ -41,7 +39,7 @@ const Header = () => {
         </div>
         <nav>
           <ul>
-            <li >
+            <li>
               <Link href="/">
                 <a className="hidden">{"Home"}</a>
               </Link>
@@ -121,6 +119,18 @@ const Header = () => {
                 {/* <p className={styles.subTitle}>{menu[0].desc}</p> */}
               </a>
             </Link>
+          </li>
+          <li>
+            {/* <Link href="/"> */}
+            <a
+              href="https://www.birthday-film-color.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p className={styles.subTitle}>{"Birthday & Film Color"}</p>
+              {/* <p className={styles.subTitle}>{menu[0].desc}</p> */}
+            </a>
+            {/* </Link> */}
           </li>
         </ul>
         <div className="flex justify-center mt-20">
