@@ -4,15 +4,23 @@ import Life from "../src/components/Life";
 import Meigen1 from "../public/Meigen1.json";
 import { useCallback, useEffect, useState } from "react";
 import AdmaxSwitch from "../src/components/AdmaxSwitch";
-
 import life from "../public/LifeForIndex.json";
 
-
+//use-react-screenshot
+import React, { createRef } from "react";
+import { useScreenshot } from "use-react-screenshot";
 
 const Home: NextPage = ({ life }: any) => {
-  const meigen1: any = Meigen1.map((_) => _);
-  
+  //screenshot
+  // const ref = createRef<HTMLElement | null>();
+  // const ref = createRef(null);
+  const ref = createRef<HTMLDivElement>();
+  const [image, takeScreenshot] = useScreenshot();
+  const getImage = () => takeScreenshot(ref.current);
 
+  //meigen関連
+  const meigen1: any = Meigen1.map((_) => _);
+  //乱数関連
   const [random, setRandom] = useState<number>(0);
 
   //乱数の整数
@@ -45,8 +53,16 @@ const Home: NextPage = ({ life }: any) => {
           <AdmaxSwitch id="88b8ac30d0d3fc49ac5df081717693eb" />
         </div>
         {/* 広告 */}
+        <img width="100%" src={image} alt={'Screenshot'} />
+        {/* ボタン */}
+        <div ref={ref}>
+        <button style={{ marginBottom: '10px' }} onClick={getImage}>
+          Take screenshot
+        </button>
+      </div>
+        {/* ボタン */}
 
-        <Life data={life}/>
+        <Life data={life} />
       </main>
       <div className="fixed flex flex-col items-center justify-around font-fancy tracking-widest   card">
         <div className="text-sm sm:text-center text-start meigen">
