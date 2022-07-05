@@ -1,20 +1,36 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import Header from "./Header";
+import Button from "./Button";
+
+//use-react-screenshot
+// import React, { createRef } from "react";
+// import { useScreenshot } from "use-react-screenshot";
 
 const Layout = ({ children }: Props) => {
+  //screenshot
+  // const ref = createRef<HTMLDivElement>();
+  // const [image, takeScreenshot] = useScreenshot();
+  // const getImage = () => {
+  //   console.log("shot!");
+  //   takeScreenshot(ref.current);
+  // };
+
   return (
     <div>
-      <nav >
+      {/* 画像 */}
+      {/* {image === null ? null : (
+        <img
+          className="w-full h-1/5 object-cover"
+          src={image}
+          alt={"とった画像"}
+        />
+      )} */}
+      {/* 画像 */}
+      <nav>
         <Header />
-        {/* <nav className="flex flex-rows p-2  bg-red-500 text-white font-bold">
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About </a>
-        </Link> */}
       </nav>
+      {/* <Button props={getImage} /> */}
       {children}
     </div>
   );

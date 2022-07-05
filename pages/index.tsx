@@ -6,21 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import AdmaxSwitch from "../src/components/AdmaxSwitch";
 import life from "../public/LifeForIndex.json";
 
-//use-react-screenshot
-import React, { createRef } from "react";
-import { useScreenshot } from "use-react-screenshot";
-
 const Home: NextPage = ({ life }: any) => {
-  //screenshot
-  // const ref = createRef<HTMLElement | null>();
-  // const ref = createRef(null);
-  const ref = createRef<HTMLDivElement>();
-  const [image, takeScreenshot] = useScreenshot();
-  const getImage = () => {
-    console.log("shot!");
-    takeScreenshot(ref.current);
-  };
-
   //meigen関連
   const meigen1: any = Meigen1.map((_) => _);
   //乱数関連
@@ -50,18 +36,12 @@ const Home: NextPage = ({ life }: any) => {
       <Head>
         <title>Motivation ✨</title>
       </Head>
-      <main className="main" ref={ref}>
+      <main className="main">
         {/* 広告 */}
         <div className="flex justify-center mb-8  mr-3">
           <AdmaxSwitch id="88b8ac30d0d3fc49ac5df081717693eb" />
         </div>
         {/* 広告 */}
-
-        {/* 画像 */}
-        {image === null ? null : (
-          <img className="w-fit h-fit" src={image} alt={"とった画像"} />
-        )}
-        {/* 画像 */}
 
         <Life data={life} />
       </main>
@@ -72,16 +52,6 @@ const Home: NextPage = ({ life }: any) => {
         <div className="text-xs text-center  auth">
           -{meigen1[random].auth}-
         </div>
-        {/* ボタン */}
-        <div>
-          <button
-            className="w-10 h-10 bg-black cursor-pointer text-white"
-            onClick={getImage}
-          >
-            ◯
-          </button>
-        </div>
-        {/* ボタン */}
       </div>
     </div>
   );
